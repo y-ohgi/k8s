@@ -1,0 +1,13 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: web-ingress
+
+spec:
+  tls:
+    - secretName: cert-manager-tls
+      hosts:
+        - '' #TODO: YOUR DOMAIN
+  backend:
+    serviceName: web-service
+    servicePort: 80

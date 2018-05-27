@@ -1,0 +1,19 @@
+apiVersion: certmanager.k8s.io/v1alpha1
+kind: Certificate
+metadata:
+  name: '' #TODO: certificate name
+
+spec:
+  secretName: cert-manager-tls
+  issuerRef:
+    name: letsencrypt
+    kind: ClusterIssuer
+  commonName: '' #TODO: YOUR DOMAIN
+  dnsNames:
+    - '' #TODO: YOUR DOMAIN
+  acme:
+    config:
+      - dns01:
+          provider: gcp-dns
+        domains:
+          - '' #TODO: YOUR DOMAIN
